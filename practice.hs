@@ -56,3 +56,8 @@ creditsFromId id = lookupUserName id >>= lookupCredits
 
 creditsFromWCId :: WillCoId -> Maybe PlayerCredits
 creditsFromWCId id = lookupGamerId id >>= lookupUserName >>= lookupCredits
+
+-- Now that <$> <*> >>= are available to you, you can chain together any computation you need in context --
+-- functor is extended by app -> app is extended by Monad --
+-- you also have return to work with (>>) --
+-- <$> <*> >>= --
