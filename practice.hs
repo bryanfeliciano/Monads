@@ -34,7 +34,7 @@ gamerIdDB = Map.fromList  [
                           ,(1005,5)
                           ,(1006,6)
                           ]
-                          
+
 lookupGamerId :: WillCoId -> Maybe GamerId
 lookupGamerId id = Map.lookup id gamerIdDB
 
@@ -54,3 +54,5 @@ creditsFromPlayerId id = altLookupCredits (lookupUserName id)
 creditsFromId :: GamerId -> Maybe PlayerCredits
 creditsFromId id = lookupUserName id >>= lookupCredits
 
+creditsFromWCId :: WillCoId -> Maybe PlayerCredits
+creditsFromWCId id = lookupGamerId id >>= lookupUserName >>= lookupCredits
