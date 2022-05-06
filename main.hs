@@ -36,3 +36,4 @@ altLookupCredits (Just username) = lookupCredits username
 
 creditsFromPlayerId :: GamerId -> Maybe PlayerCredits
 creditsFromPlayerId id = altLookupCredits (lookupUserName id)
+
